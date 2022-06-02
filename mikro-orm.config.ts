@@ -1,16 +1,17 @@
 import "reflect-metadata";
 import { config } from "dotenv";
-import { Options } from "@mikro-orm/core";
+import { Options, ReflectMetadataProvider } from "@mikro-orm/core";
 import type { SqliteDriver } from "@mikro-orm/sqlite";
-import { TsMorphMetadataProvider } from "@mikro-orm/reflection";
+
+import { User } from "./db/entities";
 
 config({ path: "./.env.local" });
 
 const ormConfig: Options<SqliteDriver> = {
-  dbName: ":memory:",
+  dbName: "test.db",
   type: "sqlite",
-  entities: ["./db/entities/*.entity.ts"],
-  metadataProvider: TsMorphMetadataProvider,
+  entities: [User],
+  metadataProvider: ReflectMetadataProvider,
 };
 
 export default ormConfig;
