@@ -14,6 +14,7 @@
     "react-dom": "18.1.0"
   },
   "devDependencies": {
+    "@mikro-orm/cli": "^5.1.5",
     "@mikro-orm/core": "^5.1.5",
     "@mikro-orm/postgresql": "^5.1.5",
     "@mikro-orm/reflection": "^5.1.5",
@@ -24,6 +25,7 @@
     "dotenv": "^16.0.1",
     "eslint": "8.16.0",
     "eslint-config-next": "12.1.6",
+    "ts-node": "^10.8.0",
     "typescript": "4.7.2"
   },
   "mikro-orm": {

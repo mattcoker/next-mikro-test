@@ -1,16 +1,16 @@
 import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
 
 @Entity()
-export default class State {
+export default class User {
   @PrimaryKey()
-  id!: string;
+  id!: number;
 
   @Property()
   name!: string;
 
   @Property()
-  createdAt = new Date();
+  createdAt?: Date = new Date();
 
   @Property({ onUpdate: () => new Date() })
-  updatedAt = new Date();
+  updatedAt?: Date = new Date();
 }

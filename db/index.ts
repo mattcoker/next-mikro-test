@@ -3,4 +3,6 @@ import type { SqliteDriver } from "@mikro-orm/sqlite";
 
 import ormConfig from "../mikro-orm.config";
 
-export const { em } = await MikroORM.init<SqliteDriver>(ormConfig);
+const orm = await MikroORM.init<SqliteDriver>(ormConfig);
+
+export const getEM = () => orm.em.fork();
